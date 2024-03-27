@@ -1,0 +1,16 @@
+<div id="<%= dom_id campaign %>">
+  <p>
+    <strong>Name:</strong>
+    <%= campaign.name %>
+  </p>
+
+  <p>
+    <strong>Archived:</strong>
+    <%= campaign.archived %>
+
+    <%= button_to toggle_archived_path(campaign), method: :patch do %>
+      <%= campaign.archived? ? "Unarchive" : "Archive" %>
+    <% end %>
+  </p>
+  <br><br><br>
+</div>
