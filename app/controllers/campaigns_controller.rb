@@ -59,7 +59,10 @@ class CampaignsController < ApplicationController
 
   def toggle_archived
     @campaign.toggle!(:archived)
-    redirect_to campaigns_url, notice: "Campaign was successfully updated."
+    respond_to do |format|
+      format.html { redirect_to campaigns_url, notice: "Campaign was successfully updated." }
+      format.turbo_stream
+    end
   end
 
   private
